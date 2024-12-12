@@ -1,0 +1,625 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #F5F9F8;
+    background-image: url(source/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+body.fade-in {
+    animation: fadeIn 1s forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+body.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+        translate: 0 400px;
+    }
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+    align-items: center;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    a {
+        text-decoration: none;
+        color: #2a613e;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+}
+button:hover {
+    cursor: pointer;
+}
+#back {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 42px;
+    width: 42px;
+    background-color: #2a613e;
+    padding: 1px;
+    border-radius: 10px;
+    transition: 0.5s ease-in-out;
+
+    img {
+        height: 35px;
+        width: 35px;
+    }
+}
+#back:hover {
+    transform: scale(1.1);
+    transition: 0.5s ease-in-out;
+}
+.home {
+    display: flex;
+    position: inherit;
+    align-content: center;
+    a {
+        padding: 10px;
+        border-bottom: 2px solid transparent;
+        transition: 0.5s linear;
+    }
+    a:hover {
+        border-bottom: 2px solid;
+        transition: 0.5s linear;
+    }
+}
+
+.topic {
+    background: linear-gradient(135deg, #278e40, #252330);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    border-radius: 12px;
+    flex: 1;
+    color: white;
+    box-shadow: 0 0 10px 5px #2d4a2c;
+    .content1 {
+        margin-left: 50px;
+        width: 66%;
+        line-height: 30px;
+        z-index: 1000;
+        a {
+            color: white;
+            font-weight: bold;
+        }
+        p {
+        text-align: justify;
+        }
+        h1 {
+        line-height: 50px;
+        }
+    }
+    .herta {
+        margin-left: 20px;
+        width: 33%;
+        border-radius: 12px;
+        margin: -20px;
+        margin-left: 30px;
+    }
+}
+#topic2 {
+    background: linear-gradient(135deg, #278e40, #252330);
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 20px;
+    display: none;
+    justify-content: space-between;
+    margin: 30px;
+    border-radius: 12px;
+    flex: 1;
+    color: white;
+    box-shadow: 0 0 10px 5px #2d4a2c;
+    .content1 {
+        margin-left: 50px;
+        width: 66%;
+        line-height: 30px;
+        z-index: 1000;
+        a {
+            color: white;
+            font-weight: bold;
+        }
+        p {
+        text-align: justify;
+        }
+        h1 {
+        line-height: 50px;
+        }
+    }
+    .herta {
+        margin-left: 20px;
+        width: 33%;
+        border-radius: 12px;
+        margin: -20px;
+        margin-left: 30px;
+    }
+}
+#content2 {
+    margin-left: 50px;
+    width: 66%;
+    line-height: 30px;
+    z-index: 1000;
+    a {
+        color: white;
+        font-weight: bold;
+    }
+    p {
+    text-align: justify;
+    }
+    h1 {
+    line-height: 50px;
+    }
+}
+.topic2 {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    border-radius: 10px;
+    flex: 1;
+    color: white;
+}
+.topic2-content1 {
+    padding: 20px;
+    width: 100%;
+    margin: 0 10px 0 10px;
+    a {
+        text-decoration: none;
+        color: black;
+        text-align: left;
+        :hover {
+            text-decoration: underline;
+        }
+    }
+    h1 {
+        margin-left: 10px;
+    }
+}
+.topic2-content2 {
+    padding: 20px;
+    width: 100%;
+    margin: 0 10px 0 10px;
+    a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        :hover {
+            text-decoration: underline;
+        }
+    }
+    h1 {
+        margin-left: 10px;
+    }
+}
+.topic2-content3 {
+    padding: 20px;
+    width: 100%;
+    margin: 0 10px 0 10px;
+    width: 60%;
+    a {
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+        text-align: left;
+        :hover {
+            text-decoration: underline;
+        }
+    }
+    h1 {
+        margin-left: 10px;
+    }
+}
+.hotcontent {
+    display: flex;
+}
+
+.scroll-container {
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    justify-content: center;
+}
+.producttt {
+    flex: 1;
+    overflow-x: auto;
+    display: flex;
+    white-space: nowrap;
+    scroll-behavior: smooth;
+    height: 270px;
+    justify-content: space-between;
+    margin: 0 auto;
+
+}
+.producttt::-webkit-scrollbar {
+    display: none;
+}
+#hotcontent1 {
+    background-image: url(images/tiki-storage-basket.jpg);
+    background-size: 200%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 10px;
+    width: 60%;
+    height: 200px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    p {
+        position: inherit;
+        translate: 0 110px;
+    }
+}
+#hotcontent2 {
+    background-image: url(images/tiki-storage-chest.jpg);
+    background-size: 200%;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    width: 50%;
+    height: 200px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+    p {
+        position: inherit;
+        translate: 0 110px;
+    }
+}
+#viewmore {
+    background-color: #ffffff;
+    color: #383A48;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    width: 90%; 
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    transition: 0.5s ease-in-out;
+}
+#viewmore:hover {
+        background-color: #383A48;
+        color: white;
+        transition: 0.1s ease-in-out;
+}
+#hotcontent3 {
+    background: linear-gradient(45deg, #278e40, #2d4a2c);
+    background-color: #252330;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent3:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent4:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent4 {
+    background: linear-gradient(45deg, #2a613e, #383A48);
+    background-color: #383A48;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent5 {
+    background: linear-gradient(45deg, #278e40, #2d4a2c);
+    background-color: #252330;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent5:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent6:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent6 {
+    background: linear-gradient(45deg, #2a613e, #383A48);
+    background-color: #383A48;
+    color: white;
+    border-radius: 10px;
+    width: 100%;
+    height: 50%;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent7 {
+    background: linear-gradient(45deg, #252330, #595168);
+    background-color: #252330;
+    color: white;
+    border-radius: 10px;
+    width: 155px;
+    height: 155px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent7:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent8:hover {
+    background: #252330;
+    transition: 0.5s ease-in-out;
+}
+#hotcontent8 {
+    background: linear-gradient(45deg, #575669, #575669);
+    background-color: #383A48;
+    color: white;
+    border-radius: 10px;
+    width: 155px;
+    height: 155px;
+    margin: 10px;
+    font-weight: bold;
+    transition: 0.5s ease-in-out;
+}
+#product1 {
+    background-image: url(images/tiki-storage-chest.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+#product2 {
+    background-image: url(images/tiki-storage-basket.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+#product3 {
+    background-image: url(images/carpet.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+#product4 {
+    background-image: url(images/basket.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+#product5 {
+    background-image: url(images/totebag.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+#product6 {
+    background-image: url(images/ropee.jpg);
+    width: 300px;
+    height: 200px;
+    background-size: cover;
+    margin: 10px;
+    font-weight: bold;
+    display: block;
+    border-radius: 16px;
+    p {
+        position: inherit;
+        translate: 0 120px;
+    }
+}
+
+.pname {
+    color: black;
+    text-align: center;
+}
+.tikiw-section, .mission, .vision, .purpose, .objectives {
+    background-color: #d4edda;
+    border-radius: 12px;
+    padding: 40px 30px;
+    margin: 40px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+}
+
+.tikiw-section:hover, .mission:hover, .vision:hover, .purpose:hover, .objectives:hover {
+    background-color: #a8d4a3;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tikiw-section h2, .mission h3, .vision h3, .purpose h3, .objectives h3 {
+    font-size: 3em;
+    font-family: 'Arial', sans-serif;
+    color: #155724;
+    margin-bottom: 30px;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+
+.tikiw-section h2:hover, .mission h3:hover, .vision h3:hover, .purpose h3:hover, .objectives h3:hover {
+    color: #1b5e20;
+}
+
+.tikiw-section p, .mission p, .vision p, .purpose p, .objectives p {
+    font-size: 1.4em;
+    font-family: 'Arial', sans-serif;
+    color: #155724;
+    line-height: 1.8;
+    margin: 0 auto;
+    max-width: 800px;
+    transition: color 0.3s ease;
+}
+
+.tikiw-section p:hover, .mission p:hover, .vision p:hover, .purpose p:hover, .objectives p:hover {
+    color: #1b5e20;
+}
+
+.objectives ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.objectives ul li {
+    font-size: 1.4em;
+    font-family: 'Arial', sans-serif;
+    color: #155724;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    transition: color 0.3s ease;
+}
+
+.objectives ul li:hover {
+    color: #1b5e20;
+}
+
+.tikiw-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+
+.tikiw-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin: 30px 0;
+}
+
+
+.tikiw-image img {
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+
+
+
+
+button {
+    border: none;
+    background: transparent;
+    padding: 10px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    transform: scale(1.1); /* Zoom-in effect */
+    transition: transform 0.3s ease; /* Smooth transition */
+}
+
+/* Hover animation for the images */
+.herta img {
+    transition: transform 0.3s ease; /* Smooth transition */
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.herta img:hover {
+    transform: scale(1.1);
+}
+
+.video-section {
+    position: relative;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.video-section video {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.topic, .topic2 {
+    margin-top: 20px;
+    padding: 20px;
+}

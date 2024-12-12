@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Likhéza</title>
+  <style>
+    /* General Styles */
+    body, html {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #ffffff;
+      height: 100%;
+    }
+
+    /* Loading screen styles */
+    #loading {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgb(255, 255, 255);
+      z-index: 9999;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #loading img {
+      width: 100px;
+      animation: spin3d 4s linear infinite;
+    }
+
+    /* Keyframes for 3D spinning animation */
+    @keyframes spin3d {
+      from {
+        transform: rotateY(0deg);
+      }
+      to {
+        transform: rotateY(720deg);
+      }
+    }
+
+    /* Content visibility */
+    body.loaded {
+      overflow: auto;
+    }
+
+    /* Header Section (Navigation Bar included here) */
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #6a4a3a; /* Corrected */
+      padding: 10px 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    .logo img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    .logo h1 {
+      margin: 0;
+      color: #fff;
+      font-size: 1.5em;
+    }
+
+    /* Navigation Bar Styles (within Header) */
+    .navbar {
+      display: flex;
+    }
+
+    .navbar a {
+      color: #fff;
+      font-size: 1.2em;
+      padding: 10px 20px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .navbar a:hover {
+      background-color: #b57d4e;
+    }
+
+    /* Main Content Section */
+    .main-content {
+      padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    /* Product Carousel Section */
+    .product-carousel {
+      margin-bottom: 50px;
+    }
+
+    .carousel-container {
+      width: 80%;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    .carousel {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-item {
+      min-width: 100%;
+      box-sizing: border-box;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .carousel-item img {
+      width: 100%;
+      height: auto;
+      max-width: 300px;
+      margin: 0 auto 20px;
+    }
+
+    .carousel-item h4 {
+      color: #3b5d17;
+      font-size: 1.5em;
+    }
+
+    .carousel-item p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    /* Interactive History Timeline */
+    .interactive-history .timeline {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+
+    .timeline-event {
+      width: 200px;
+      padding: 20px;
+      background-color: #f8f4e7;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .timeline-event h4 {
+      color: #5C2C06;
+      font-size: 1.6em;
+    }
+
+    .timeline-event p {
+      font-size: 1em;
+      color: #555;
+    }
+
+    .timeline-event:hover {
+      background-color: #d9c2a1;
+    }
+
+    /* Trivia Section */
+    .trivia {
+      margin-top: 50px;
+      background-color: #f8f4e7;
+      padding: 30px;
+      border-radius: 8px;
+    }
+
+    .trivia-item {
+      background-color: #fff;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .trivia-item p {
+      font-size: 1.2em;
+      color: #333;
+    }
+
+    .trivia-item strong {
+      color: #5C2C06;
+    }
+
+    /* Contact Us Section */
+    .contact-us {
+      background-color: #5C2C06;
+      color: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+
+    .contact-us h3 {
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .contact-us p {
+      font-size: 1.2em;
+    }
+
+    .social-media {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-media a {
+      color: #fff;
+      font-size: 1.5em;
+      text-decoration: none;
+    }
+
+    .social-media a:hover {
+      color: #b57d4e;
+    }
+
+    /* Footer Section */
+    footer {
+      background-color: #6a4a3a; /* Corrected */
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loading">
+    <img src="photo_6183834432234962432_y (1).jpg" alt="Loading...">
+  </div>
+
+  <!-- Header with Logo and Navigation Bar -->
+  <div class="header">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <h1>Likhéza</h1>
+    </div>
+    <div class="navbar">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#history">History</a>
+      <a href="#products">Products</a>
+    </div>
+  </div>
+
+  <!-- Main Content Section -->
+  <div class="main-content">
+    <!-- Product Carousel Section -->
+    <section class="product-carousel">
+      <h3>Our Featured Products</h3>
+      <div class="carousel-container">
+        <div class="carousel">
+          <div class="carousel-item">
+            <img src="product1.jpg" alt="Product 1">
+            <h4>Product 1</h4>
+            <p>Elegant, comfortable, and timeless.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="product2.jpg" alt="Product 2">
+            <h4>Product 2</h4>
+            <p>Designed for modern living.</p>
+          </div>
+          <div class="carousel-item">
+            <img src="product3.jpg" alt="Product 3">
+            <h4>Product 3</h4>
+            <p>Where luxury meets practicality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive History Timeline Section -->
+    <section class="interactive-history">
+      <h3>Our Journey</h3>
+      <div class="timeline">
+        <div class="timeline-event" data-year="2005">
+          <h4>2005: The Beginning</h4>
+          <p>Likhéza was founded with a passion for unique designs and fine craftsmanship.</p>
+        </div>
+        <div class="timeline-event" data-year="2010">
+          <h4>2010: First Award</h4>
+          <p>We won our first design award for excellence in furniture design.</p>
+        </div>
+        <div class="timeline-event" data-year="2015">
+          <h4>2015: Expanding Horizons</h4>
+          <p>Likhéza expanded into international markets, bringing our designs worldwide.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trivia Section -->
+    <section class="trivia">
+      <h3>Fun Facts About Likhéza</h3>
+      <div class="trivia-item">
+        <p><strong>Did you know?</strong> Likhéza's furniture is crafted using sustainable materials, ensuring eco-friendly designs.</p>
+      </div>
+      <div class="trivia-item">
+        <p><strong>Did you know?</strong> Our team includes artisans from all over the world, blending diverse styles into our products.</p>
+      </div>
+    </section>
+  </div>
+
+  <!-- Contact Us Section -->
+  <section class="contact-us">
+    <h3>Contact Us</h3>
+    <p>Have questions? We'd love to hear from you!</p>
+    <p>Email: contact@likheza.com</p>
+    <p>Phone: 123-456-7890</p>
+    <div class="social-media">
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <p>&copy; 2024 Likhéza. All Rights Reserved.</p>
+  </footer>
+
+  <!-- Script to Remove Loading Screen after 5 seconds -->
+  <script>
+    setTimeout(function() {
+      const loadingScreen = document.getElementById('loading');
+      if (loadingScreen) {
+        loadingScreen.style.transition = 'opacity 0.5s ease';
+        loadingScreen.style.opacity = '0';
+        setTimeout(() => {
+          loadingScreen.style.display = 'none';
+          document.body.classList.add('loaded');
+        }, 500);
+      }
+    }, 5000);
+  </script>
+
+</body>
+</html>
+
+
+
+
+
